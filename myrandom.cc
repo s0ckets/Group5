@@ -8,6 +8,15 @@
  *
  * Author: Duncan A. Buell
  * Date last modified: 23 May 2016
+ *
+ * Used and Modified by: Adrian Brooks
+ *                       Russell Burckhalter
+ *                       Donald Landrum Jr
+ *                       Matthew McGee
+ *                       Marc Ochsner
+ *
+ * Date last modified: December 1 2016
+ *
 **/
 
 /******************************************************************************

@@ -1,11 +1,20 @@
 #include "onepct.h"
 /****************************************************************
-* Implementation for the 'OnePct' class.
-*
-* Author/copyright:  Duncan Buell. All rights reserved.
-* Date: 21 May 2013
-*
+ * Implementation for the 'OnePct' class.
+ *
+ * Author/copyright:  Duncan Buell. All rights reserved.
+ * Date: 21 May 2013
+ *
+ * Used and Modified by: Adrian Brooks
+ *                       Russell Burckhalter
+ *                       Donald Landrum Jr
+ *                       Matthew McGee
+ *                       Marc Ochsner
+ *
+ * Date last modified: December 1 2016
+ *
 **/
+
 
 static const string kTag = "OnePct: ";
 

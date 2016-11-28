@@ -1,10 +1,18 @@
 #include "simulation.h"
 /****************************************************************
-* Implementation for the 'Simulation' class.
-*
-* Author/copyright:  Duncan Buell
-* Date: 19 July 2016
-*
+ * Implementation for the 'Simulation' class.
+ *
+ * Author/copyright:  Duncan Buell
+ * Date: 19 July 2016
+ *
+ * Used and Modified by: Adrian Brooks
+ *                       Russell Burckhalter
+ *                       Donald Landrum Jr
+ *                       Matthew McGee
+ *                       Marc Ochsner
+ *
+ * Date last modified: December 1 2016
+ *
 **/
 
 static const string kTag = "SIM: ";
