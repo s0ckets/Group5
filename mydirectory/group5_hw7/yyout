@@ -1,0 +1,192 @@
+MAIN: Beginning execution
+MAIN: 
+TIME***********************************************************************
+TIME CPU percent    0.00   0.00                    Sun Nov  6 10:02:50 2016
+TIME beginning             0.00 u         0.00 s   Res:      811008
+TIME beginning             0.00 u_t       0.00 s_t
+TIME***********************************************************************
+
+
+
+MAIN: outfile 'yyout'
+MAIN: logfile 'yylog'
+
+MAIN: 
+CONFIG: RN seed:                    35
+CONFIG: Election Day length:     46800 =   13.00 (   13.00) hours
+CONFIG: Time to vote mean:         105 =    1.75 minutes
+CONFIG: Min and max expected voters for this simulation:           50    5000
+Wait time (minutes) that is 'too long':       30
+Number of iterations to perform:    3
+Max service time subscript:  12957
+CONFIG:  0- 0 :    0.00
+CONFIG:  6- 7 :   10.00
+CONFIG:  7- 8 :   10.00
+CONFIG:  8- 9 :   10.00
+CONFIG:  9-10 :    5.00
+CONFIG: 10-11 :    5.00
+CONFIG: 11-12 :    5.00
+CONFIG: 12-13 :   10.00
+CONFIG: 13-14 :   10.00
+CONFIG: 14-15 :    5.00
+CONFIG: 15-16 :    5.00
+CONFIG: 16-17 :    5.00
+CONFIG: 17-18 :   10.00
+CONFIG: 18-19 :   10.00
+
+
+
+SIM: RunSimulation for pct 
+SIM:    1 XXX00100                 20.20      10101     100     235  8   10.30 HH    0 HH
+OnePct:    1 XXX00100                 20.20      10101     100     235  8   10.30 HH    0 HH
+OnePct:   0    1 XXX00100                    100   1 stations, mean/dev wait (mins)     0.78     1.60 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    1 XXX00100                    100   1 stations, mean/dev wait (mins)     0.50     1.26 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    1 XXX00100                    100   1 stations, mean/dev wait (mins)     1.03     2.21 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    2 XXX00500                 21.20      10101     500     235  8   10.50 HH    0 HH
+OnePct:    2 XXX00500                 21.20      10101     500     235  8   10.50 HH    0 HH
+OnePct:   0    2 XXX00500                    500   1 stations, mean/dev wait (mins)   106.80    37.44 toolong    473  94.60   461  92.20   455  91.00
+OnePct:   1    2 XXX00500                    500   1 stations, mean/dev wait (mins)    97.73    34.66 toolong    488  97.60   475  95.00   464  92.80
+OnePct:   2    2 XXX00500                    500   1 stations, mean/dev wait (mins)   122.84    39.80 toolong    479  95.80   470  94.00   457  91.40
+OnePct: toolong space filler
+OnePct:    2 XXX00500                 21.20      10101     500     235  8   10.50 HH    0 HH
+OnePct:   0    2 XXX00500                    500   2 stations, mean/dev wait (mins)     1.93     2.57 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    2 XXX00500                    500   2 stations, mean/dev wait (mins)     4.25     6.32 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    2 XXX00500                    500   2 stations, mean/dev wait (mins)     2.54     4.86 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    3 XXX00900                 22.20      10101     900     235  8   10.70 HH    0 HH
+OnePct:    3 XXX00900                 22.20      10101     900     235  8   10.70 HH    0 HH
+OnePct:   0    3 XXX00900                    900   2 stations, mean/dev wait (mins)    42.92    21.51 toolong    611  67.89   419  46.56   323  35.89
+OnePct:   1    3 XXX00900                    900   2 stations, mean/dev wait (mins)    48.62    21.87 toolong    720  80.00   545  60.56   386  42.89
+OnePct:   2    3 XXX00900                    900   2 stations, mean/dev wait (mins)    77.77    35.20 toolong    803  89.22   754  83.78   663  73.67
+OnePct: toolong space filler
+OnePct:    3 XXX00900                 22.20      10101     900     235  8   10.70 HH    0 HH
+OnePct:   0    3 XXX00900                    900   3 stations, mean/dev wait (mins)     2.70     3.86 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    3 XXX00900                    900   3 stations, mean/dev wait (mins)     3.63     3.90 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    3 XXX00900                    900   3 stations, mean/dev wait (mins)     8.63     9.28 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    4 XXX01200                 23.20      10101    1200     235  8   10.90 HH    0 HH
+OnePct:    4 XXX01200                 23.20      10101    1200     235  8   10.90 HH    0 HH
+OnePct:   0    4 XXX01200                   1200   2 stations, mean/dev wait (mins)   205.82   102.81 toolong   1130  94.17  1117  93.08  1110  92.50
+OnePct:   1    4 XXX01200                   1200   2 stations, mean/dev wait (mins)   209.76    98.63 toolong   1146  95.50  1135  94.58  1109  92.42
+OnePct:   2    4 XXX01200                   1200   2 stations, mean/dev wait (mins)   198.85    91.68 toolong   1140  95.00  1127  93.92  1109  92.42
+OnePct: toolong space filler
+OnePct:    4 XXX01200                 23.20      10101    1200     235  8   10.90 HH    0 HH
+OnePct:   0    4 XXX01200                   1200   3 stations, mean/dev wait (mins)    22.65    15.18 toolong    426  35.50   190  15.83    15   1.25
+OnePct:   1    4 XXX01200                   1200   3 stations, mean/dev wait (mins)    19.59    13.84 toolong    308  25.67    75   6.25    15   1.25
+OnePct:   2    4 XXX01200                   1200   3 stations, mean/dev wait (mins)    24.63    15.74 toolong    381  31.75   261  21.75    57   4.75
+OnePct: toolong space filler
+OnePct:    4 XXX01200                 23.20      10101    1200     235  8   10.90 HH    0 HH
+OnePct:   0    4 XXX01200                   1200   4 stations, mean/dev wait (mins)     1.68     2.22 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    4 XXX01200                   1200   4 stations, mean/dev wait (mins)     3.65     3.73 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    4 XXX01200                   1200   4 stations, mean/dev wait (mins)     3.47     3.79 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    5 XXX01500                 24.20      10101    1500     235  8   10.70 HH    0 HH
+OnePct:    5 XXX01500                 24.20      10101    1500     235  8   10.70 HH    0 HH
+OnePct:   0    5 XXX01500                   1500   3 stations, mean/dev wait (mins)   131.77    58.64 toolong   1369  91.27  1340  89.33  1306  87.07
+OnePct:   1    5 XXX01500                   1500   3 stations, mean/dev wait (mins)   115.81    46.76 toolong   1397  93.13  1381  92.07  1351  90.07
+OnePct:   2    5 XXX01500                   1500   3 stations, mean/dev wait (mins)    89.01    36.72 toolong   1366  91.07  1337  89.13  1289  85.93
+OnePct: toolong space filler
+OnePct:    5 XXX01500                 24.20      10101    1500     235  8   10.70 HH    0 HH
+OnePct:   0    5 XXX01500                   1500   4 stations, mean/dev wait (mins)    21.29    14.84 toolong    432  28.80   178  11.87     8   0.53
+OnePct:   1    5 XXX01500                   1500   4 stations, mean/dev wait (mins)    15.58    12.22 toolong    167  11.13    17   1.13     0   0.00
+OnePct:   2    5 XXX01500                   1500   4 stations, mean/dev wait (mins)    14.55    11.50 toolong    136   9.07     0   0.00     0   0.00
+OnePct: toolong space filler
+OnePct:    5 XXX01500                 24.20      10101    1500     235  8   10.70 HH    0 HH
+OnePct:   0    5 XXX01500                   1500   5 stations, mean/dev wait (mins)     2.28     2.94 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    5 XXX01500                   1500   5 stations, mean/dev wait (mins)     2.11     2.19 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    5 XXX01500                   1500   5 stations, mean/dev wait (mins)     2.85     4.35 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    6 XXX01800                 25.20      10101    1800     235  8   10.50 HH    0 HH
+OnePct:    6 XXX01800                 25.20      10101    1800     235  8   10.50 HH    0 HH
+OnePct:   0    6 XXX01800                   1800   4 stations, mean/dev wait (mins)    63.26    21.04 toolong   1640  91.11  1583  87.94  1402  77.89
+OnePct:   1    6 XXX01800                   1800   4 stations, mean/dev wait (mins)    47.06    20.12 toolong   1456  80.89  1142  63.44   699  38.83
+OnePct:   2    6 XXX01800                   1800   4 stations, mean/dev wait (mins)    35.89    16.45 toolong   1076  59.78   764  42.44   344  19.11
+OnePct: toolong space filler
+OnePct:    6 XXX01800                 25.20      10101    1800     235  8   10.50 HH    0 HH
+OnePct:   0    6 XXX01800                   1800   5 stations, mean/dev wait (mins)    10.69     8.26 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    6 XXX01800                   1800   5 stations, mean/dev wait (mins)    17.68    14.04 toolong    293  16.28   159   8.83    55   3.06
+OnePct:   2    6 XXX01800                   1800   5 stations, mean/dev wait (mins)     6.39     6.47 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+OnePct:    6 XXX01800                 25.20      10101    1800     235  8   10.50 HH    0 HH
+OnePct:   0    6 XXX01800                   1800   6 stations, mean/dev wait (mins)     2.73     2.79 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    6 XXX01800                   1800   6 stations, mean/dev wait (mins)     2.54     2.87 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    6 XXX01800                   1800   6 stations, mean/dev wait (mins)     1.89     2.35 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    7 XXX02100                 26.20      10101    2100     235  8   10.30 HH    0 HH
+OnePct:    7 XXX02100                 26.20      10101    2100     235  8   10.30 HH    0 HH
+OnePct:   0    7 XXX02100                   2100   4 stations, mean/dev wait (mins)   133.66    62.01 toolong   1969  93.76  1907  90.81  1844  87.81
+OnePct:   1    7 XXX02100                   2100   4 stations, mean/dev wait (mins)   140.03    60.80 toolong   1966  93.62  1933  92.05  1891  90.05
+OnePct:   2    7 XXX02100                   2100   4 stations, mean/dev wait (mins)   135.72    58.04 toolong   1937  92.24  1893  90.14  1861  88.62
+OnePct: toolong space filler
+OnePct:    7 XXX02100                 26.20      10101    2100     235  8   10.30 HH    0 HH
+OnePct:   0    7 XXX02100                   2100   5 stations, mean/dev wait (mins)    31.58    16.74 toolong   1021  48.62   704  33.52   294  14.00
+OnePct:   1    7 XXX02100                   2100   5 stations, mean/dev wait (mins)    37.63    19.80 toolong   1242  59.14   891  42.43   561  26.71
+OnePct:   2    7 XXX02100                   2100   5 stations, mean/dev wait (mins)    24.71    16.10 toolong    760  36.19   407  19.38   109   5.19
+OnePct: toolong space filler
+OnePct:    7 XXX02100                 26.20      10101    2100     235  8   10.30 HH    0 HH
+OnePct:   0    7 XXX02100                   2100   6 stations, mean/dev wait (mins)    11.54     9.31 toolong     31   1.48     0   0.00     0   0.00
+OnePct:   1    7 XXX02100                   2100   6 stations, mean/dev wait (mins)     7.47     9.71 toolong    144   6.86     0   0.00     0   0.00
+OnePct:   2    7 XXX02100                   2100   6 stations, mean/dev wait (mins)    10.24     9.27 toolong      8   0.38     0   0.00     0   0.00
+OnePct: toolong space filler
+OnePct:    7 XXX02100                 26.20      10101    2100     235  8   10.30 HH    0 HH
+OnePct:   0    7 XXX02100                   2100   7 stations, mean/dev wait (mins)     1.61     2.11 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    7 XXX02100                   2100   7 stations, mean/dev wait (mins)     2.39     2.51 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    7 XXX02100                   2100   7 stations, mean/dev wait (mins)     2.74     4.52 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    8 XXX02400                 27.20      10101    2400     235  8   10.10 HH    0   1   2 HH
+OnePct:    8 XXX02400                 27.20      10101    2400     235  8   10.10 HH    0   1   2 HH
+OnePct:   0    8 XXX02400                   2400   5 stations, mean/dev wait (mins)    94.24    39.78 toolong   2175  90.62  2069  86.21  2035  84.79
+OnePct:   1    8 XXX02400                   2400   5 stations, mean/dev wait (mins)    81.01    33.75 toolong   2193  91.38  2099  87.46  1985  82.71
+OnePct:   2    8 XXX02400                   2400   5 stations, mean/dev wait (mins)    87.20    34.00 toolong   2225  92.71  2135  88.96  1990  82.92
+OnePct: toolong space filler
+OnePct:    8 XXX02400                 27.20      10101    2400     235  8   10.10 HH    0   1   2 HH
+OnePct:   0    8 XXX02400                   2400   6 stations, mean/dev wait (mins)    22.22    16.75 toolong    751  31.29   339  14.12   166   6.92
+OnePct:   1    8 XXX02400                   2400   6 stations, mean/dev wait (mins)    24.61    16.16 toolong    750  31.25   445  18.54   196   8.17
+OnePct:   2    8 XXX02400                   2400   6 stations, mean/dev wait (mins)    21.38    12.92 toolong    643  26.79   137   5.71     0   0.00
+OnePct: toolong space filler
+OnePct:    8 XXX02400                 27.20      10101    2400     235  8   10.10 HH    0   1   2 HH
+OnePct:   0    8 XXX02400                   2400   7 stations, mean/dev wait (mins)     9.06     7.30 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    8 XXX02400                   2400   7 stations, mean/dev wait (mins)     9.06     8.81 toolong     46   1.92     0   0.00     0   0.00
+OnePct:   2    8 XXX02400                   2400   7 stations, mean/dev wait (mins)     5.56     4.56 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+OnePct:    8 XXX02400                 27.20      10101    2400     235  8   10.10 HH    0   1   2 HH
+OnePct:   0    8 XXX02400                   2400   8 stations, mean/dev wait (mins)     4.33     5.07 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    8 XXX02400                   2400   8 stations, mean/dev wait (mins)     1.36     1.87 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    8 XXX02400                   2400   8 stations, mean/dev wait (mins)     2.11     2.82 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: RunSimulation for pct 
+SIM:    9 XXX02700                 28.20      10101    2700     235  8   10.30 HH    0   1   2 HH
+OnePct:    9 XXX02700                 28.20      10101    2700     235  8   10.30 HH    0   1   2 HH
+OnePct:   0    9 XXX02700                   2700   6 stations, mean/dev wait (mins)    68.70    25.54 toolong   2504  92.74  2335  86.48  2083  77.15
+OnePct:   1    9 XXX02700                   2700   6 stations, mean/dev wait (mins)    62.99    22.78 toolong   2477  91.74  2366  87.63  2028  75.11
+OnePct:   2    9 XXX02700                   2700   6 stations, mean/dev wait (mins)    58.72    20.63 toolong   2448  90.67  2180  80.74  1739  64.41
+OnePct: toolong space filler
+OnePct:    9 XXX02700                 28.20      10101    2700     235  8   10.30 HH    0   1   2 HH
+OnePct:   0    9 XXX02700                   2700   7 stations, mean/dev wait (mins)    14.79    12.86 toolong    360  13.33   124   4.59     0   0.00
+OnePct:   1    9 XXX02700                   2700   7 stations, mean/dev wait (mins)    19.11    15.51 toolong    600  22.22   307  11.37    74   2.74
+OnePct:   2    9 XXX02700                   2700   7 stations, mean/dev wait (mins)    14.32    11.91 toolong    260   9.63     0   0.00     0   0.00
+OnePct: toolong space filler
+OnePct:    9 XXX02700                 28.20      10101    2700     235  8   10.30 HH    0   1   2 HH
+OnePct:   0    9 XXX02700                   2700   8 stations, mean/dev wait (mins)     4.85     5.19 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   1    9 XXX02700                   2700   8 stations, mean/dev wait (mins)     8.71     7.65 toolong      0   0.00     0   0.00     0   0.00
+OnePct:   2    9 XXX02700                   2700   8 stations, mean/dev wait (mins)     6.82     7.46 toolong      0   0.00     0   0.00     0   0.00
+OnePct: toolong space filler
+SIM: PRECINCT COUNT THIS BATCH    9
+MAIN: Ending execution
+MAIN: 
+TIME***********************************************************************
+TIME CPU percent   79.69  79.78                    Sun Nov  6 10:02:52 2016
+TIME ending                1.59 u         0.01 s   Res:     3383296
+TIME ending                1.59 u_t       0.01 s_t
+TIME***********************************************************************
+
+
+
