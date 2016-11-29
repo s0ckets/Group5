@@ -23,8 +23,8 @@
 #include <cassert>
 using namespace std;
 
-#include "../Utilities/scanner.h"
-#include "../Utilities/scanline.h"
+#include "../../Utilities/scanner.h"
+#include "../../Utilities/scanline.h"
 
 #undef NDEBUG
 

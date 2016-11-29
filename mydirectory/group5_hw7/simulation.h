@@ -19,9 +19,9 @@
 
 #include <map>
 
-#include "../Utilities/utils.h"
-#include "../Utilities/scanner.h"
-#include "../Utilities/scanline.h"
+#include "../../Utilities/utils.h"
+#include "../../Utilities/scanner.h"
+#include "../../Utilities/scanline.h"
 
 using namespace std;
 

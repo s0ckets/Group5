@@ -18,7 +18,7 @@
 #ifndef ONEVOTER_H
 #define ONEVOTER_H
 
-#include "../Utilities/utils.h"
+#include "../../Utilities/utils.h"
 
 using namespace std;
 
