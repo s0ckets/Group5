@@ -56,6 +56,11 @@ int OnePct::GetPctNumber() const {
 * General functions.
 **/
 /******************************************************************************
+ * Function 'ComputeMeanAndDev'
+ *
+ * 
+ *
+ *
 **/
 void OnePct::ComputeMeanAndDev() {
   int sum_of_wait_times_seconds = 0;
@@ -91,6 +96,13 @@ void OnePct::ComputeMeanAndDev() {
 }
 
 /****************************************************************
+ * Function 'CreateVoters'
+ *
+ * Parameters:
+ * ~ Configuration instance (by reference)
+ * ~ MyRandom instance (by reference)
+ * ~ out_stream - output
+ *
 **/
 void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
   ofstream& out_stream) {
@@ -142,6 +154,15 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
 }
 
 /****************************************************************************** 
+ * Function 'DoStatistics'
+ *
+ * Parameters:
+ * ~ int iteration
+ * ~ configuration instance (by reference)
+ * ~ int station_count
+ * ~ map of type <int, int> (by reference)
+ * ~ out_stream - output (by reference)
+ *
 **/
 int OnePct::DoStatistics(int iteration, const Configuration& config,
                          int station_count, map<int, int>& map_for_histo,
@@ -215,6 +236,12 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
 }
 
 /****************************************************************
+ * Function 'ReadData'
+ *
+ * Parameters:
+ * ~ infile - input
+ *
+ *
 **/
 void OnePct::ReadData(Scanner& infile) {
 
@@ -239,6 +266,13 @@ void OnePct::ReadData(Scanner& infile) {
 } // void OnePct::ReadData(Scanner& infile)
 
 /******************************************************************************
+ * Function 'RunSimulationPct'
+ *
+ * Parameters: 
+ * ~ Configuration instance (by reference)
+ * ~ MyRandom instance (by reference)
+ * ~ out_stream - output
+ *
 **/
 void OnePct::RunSimulationPct(const Configuration& config,
                                     MyRandom& random, 
@@ -341,7 +375,13 @@ void OnePct::RunSimulationPct(const Configuration& config,
 }
 
 /******************************************************************************
-*
+ *
+ * Function 'RunSimulationPct2'
+ *
+ * Parameters:
+ * ~ int stations_count - number of stations
+ *
+ *
 **/
 void OnePct::RunSimulationPct2(int stations_count) {
 
@@ -426,6 +466,11 @@ void OnePct::RunSimulationPct2(int stations_count) {
 } // void Simulation::RunSimulationPct2()
 
 /****************************************************************
+ * Function 'ToString'
+ *
+ *
+ *
+ *
 **/
 string OnePct::ToString() {
   
@@ -453,6 +498,13 @@ string OnePct::ToString() {
 } // string OnePct::ToString()
 
 /****************************************************************
+ * Function 'ToStringVoterMap'
+ *
+ * Parameters:
+ * ~ string label
+ * ~ themap - multimap of type <int, OneVoter> 
+ *
+ *
 **/
 string OnePct::ToStringVoterMap(string label,
                                 multimap<int, 
