@@ -113,6 +113,7 @@ public:
  static void ToLower(std::string& to, const std::string from);
  static std::string TrimBlanks(std::string what);
  static std::string Trim(std::string what);
+ static void Output(std::string, std::ofstream& offstream, std::ofstream& log_stream);
 
 private:
 };
