@@ -71,4 +71,4 @@ private:
 
 };
 
-#endif // ONEVOTER_H
+#endif // CONFIGURATION_H
