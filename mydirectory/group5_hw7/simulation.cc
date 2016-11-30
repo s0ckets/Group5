@@ -36,6 +36,18 @@ Simulation::~Simulation(){
 /****************************************************************
 * General functions.
 **/
+
+/****************************************************************
+* ReadPrecincts
+*
+* We iterate through infile and create a new OnePct each
+* iteration.  ReadData is then called for each OnePct, which
+* takes in the infile. Lastly, each OnePct is added to pcts_.
+*
+* Parameters: 
+*   - Scanner infile
+* Returns: nothing
+**/
 void Simulation::ReadPrecincts(Scanner& infile) {
   while (infile.HasNext()) {
     
@@ -44,7 +56,22 @@ void Simulation::ReadPrecincts(Scanner& infile) {
     pcts_[new_pct.GetPctNumber()] = new_pct;
   } // while (infile.HasNext()) {
 } // void Simulation::ReadPrecincts(Scanner& infile) {
+
 /****************************************************************
+* RunSimulation
+*
+* We use a for loop to iterate through all of pcts_.  Eahc 
+* iteration is bounds-checked and, if in the bounds, output.
+* Each iteration then has RunSimulationPct called, passing in
+* config, random and out_stream. After the loop, the total
+* collection of precincts is output along with the number of 
+* precincts.
+*
+* Parameters:
+*  - Configuration config
+*  - MyRandom random
+*  - ofstream out_stream
+* Returns: nothing
 **/
 void Simulation::RunSimulation(const Configuration& config,
                    MyRandom& random, ofstream& out_stream){
@@ -83,7 +110,13 @@ void Simulation::RunSimulation(const Configuration& config,
 } // void Simulation::RunSimulation()
 
 /****************************************************************
-* Usual 'ToString'.
+*'ToString'.
+*
+* Iterates through each OnePct in pcts_ and adds its ToString to
+* a return string which is returned at the end.
+* 
+* Parameters - none
+* Returns : s
 **/
 string Simulation::ToString(){
 
