@@ -18,23 +18,25 @@
 static const string kTag = "ONEVOTER: ";
 
 /****************************************************************
-* Constructor.
-**/
+ * Constructor.
+ **/
 OneVoter::OneVoter() {
-}
-/****************************************************************
-**/
-OneVoter::OneVoter(int sequence, int arrival_seconds,
-int duration_seconds) {
-sequence_ = sequence;
-time_arrival_seconds_ = arrival_seconds;
-time_start_voting_seconds_ = 0;
-time_vote_duration_seconds_ = duration_seconds;
-which_station_ = -1;
 }
 
 /****************************************************************
-**/
+ * Parameterized Constructor
+ **/
+OneVoter::OneVoter(int sequence, int arrival_seconds, int duration_seconds) {
+  sequence_ = sequence;
+  time_arrival_seconds_ = arrival_seconds;
+  time_start_voting_seconds_ = 0;
+  time_vote_duration_seconds_ = duration_seconds;
+  which_station_ = -1;
+}
+
+/****************************************************************
+ * Destructor
+ **/
 OneVoter::~OneVoter() {
 }
 
@@ -44,19 +46,19 @@ OneVoter::~OneVoter() {
 /****************************************************************
 **/
 int OneVoter::GetTimeArrival() const {
-return time_arrival_seconds_;
+  return time_arrival_seconds_;
 }
 
 /****************************************************************
 **/
 int OneVoter::GetTimeWaiting() const {
-return time_waiting_seconds_;
+  return time_waiting_seconds_;
 }
 
 /****************************************************************
 **/
 int OneVoter::GetStationNumber() const {
-return which_station_;
+  return which_station_;
 }
 
 /****************************************************************
@@ -64,104 +66,130 @@ return which_station_;
 **/
 
 /****************************************************************
+ * Function 'AssignStation'
+ * This assigns a given station number to the voter represented by this class.
+ * 
+ * Parameters:
+ *  - station_number - the number representing a voting station
+ *  - start_time_seconds - the 
+ *
 **/
-void OneVoter::AssignStation(int station_number,
-int start_time_seconds) {
-which_station_ = station_number;
-time_start_voting_seconds_ = start_time_seconds;
-time_done_voting_seconds_ = time_start_voting_seconds_
-+ time_vote_duration_seconds_;
-time_waiting_seconds_ = time_start_voting_seconds_
-- time_arrival_seconds_;
+void OneVoter::AssignStation(int station_number, int start_time_seconds) {
+  which_station_ = station_number;
+  time_start_voting_seconds_ = start_time_seconds;
+  time_done_voting_seconds_ = time_start_voting_seconds_ 
+                            + time_vote_duration_seconds_;
+
+  time_waiting_seconds_ = time_start_voting_seconds_
+                            - time_arrival_seconds_;
 }
 
 /****************************************************************
+ * Function 'GetTimeDoneVoting'
+ * This function returns the time (seconds) for a person to finish voting
 **/
 int OneVoter::GetTimeDoneVoting() const {
-return time_start_voting_seconds_ + time_vote_duration_seconds_;
+  return time_start_voting_seconds_ + time_vote_duration_seconds_;
 }
 
 /****************************************************************
+ * Function 'GetTimeInQ'
+ * This function returns the time (seconds) a person waits in line
 **/
 int OneVoter::GetTimeInQ() const {
-return time_start_voting_seconds_ - time_arrival_seconds_;
+  return time_start_voting_seconds_ - time_arrival_seconds_;
 }
 
 /****************************************************************
+ * Function 'GetTOD'
+ * This returns a string formatted as "Time Of Day" from seconds
+ * Uses function:
+ *  - ConvertTime (int time_in_seconds)
 **/
 string OneVoter::GetTOD(int time_in_seconds) const {
-//  int offset_hours = 6;
-int offset_hours = 0;
-string s = "";
-return this->ConvertTime(time_in_seconds + offset_hours*3600);
+  int offset_hours = 0;
+  string s = "";
+  
+  return this->ConvertTime(time_in_seconds + offset_hours*3600);
 }
 
 /****************************************************************
+ * Function 'ConvertTime'
+ * This function returns a String formatted time of day.
+ * 
+ * Returns:
+ *
 **/
 string OneVoter::ConvertTime(int time_in_seconds) const {
-int hours = 0;
-int minutes = 0;
-int seconds = 0;
-string s = "";
+  int hours = 0;
+  int minutes = 0;
+  int seconds = 0;
+  string s = "";
 
-hours = time_in_seconds / 3600;
-minutes = (time_in_seconds - 3600*hours) / 60;
-seconds = (time_in_seconds - 3600*hours - 60*minutes);
+  hours = time_in_seconds / 3600;
+  minutes = (time_in_seconds - 3600*hours) / 60;
+  seconds = (time_in_seconds - 3600*hours - 60*minutes);
 
-s += Utils::Format(time_in_seconds, 6);
+  s += Utils::Format(time_in_seconds, 6);
 
-if(hours < 0)
-s += " 00";
-else if(hours < 10)
-s += " 0" + Utils::Format(hours, 1);
-else
-s += " " + Utils::Format(hours, 2);
+  if(hours < 0)
+    s += " 00";
+  else if(hours < 10)
+    s += " 0" + Utils::Format(hours, 1);
+  else
+    s += " " + Utils::Format(hours, 2);
 
-if(minutes < 0)
-s += ":00";
-else if(minutes < 10)
-s += ":0" + Utils::Format(minutes, 1);
-else
-s += ":" + Utils::Format(minutes, 2);
+  if(minutes < 0)
+    s += ":00";
+  else if(minutes < 10)
+    s += ":0" + Utils::Format(minutes, 1);
+  else
+    s += ":" + Utils::Format(minutes, 2);
 
-if(seconds < 0)
-s += ":00";
-else if(seconds < 10)
-s += ":0" + Utils::Format(seconds, 1);
-else
-s += ":" + Utils::Format(seconds, 2);
+  if(seconds < 0)
+    s += ":00";
+  else if(seconds < 10)
+    s += ":0" + Utils::Format(seconds, 1);
+  else
+    s += ":" + Utils::Format(seconds, 2);
 
-return s;
+  return s;
 } // string OneVoter::ConvertTime(int time_in_seconds) const
 
 /****************************************************************
+ * Function 'ToString'
+ * This string-formats the voter's data annd times retrieved through class functions
+ *
+ * Returns:
+ *  -
 **/
 string OneVoter::ToString() {
-string s = kTag;
+  string s = kTag;
 
-s += Utils::Format(sequence_, 7);
-s += ": ";
-s += Utils::Format(this->GetTOD(time_arrival_seconds_));
-s += " ";
-s += Utils::Format(this->GetTOD(time_start_voting_seconds_));
-s += " ";
-s += Utils::Format(this->ConvertTime(time_vote_duration_seconds_));
-s += " ";
-s += Utils::Format(this->GetTOD(time_start_voting_seconds_ + time_vote_duration_seconds_));
-s += " ";
-s += Utils::Format(this->ConvertTime(GetTimeInQ()));
-s += ": ";
-s += Utils::Format(which_station_, 4);
+  s += Utils::Format(sequence_, 7);
+  s += ": ";
+  s += Utils::Format(this->GetTOD(time_arrival_seconds_));
+  s += " ";
+  s += Utils::Format(this->GetTOD(time_start_voting_seconds_));
+  s += " ";
+  s += Utils::Format(this->ConvertTime(time_vote_duration_seconds_));
+  s += " ";
+  s += Utils::Format(this->GetTOD(time_start_voting_seconds_ + time_vote_duration_seconds_));
+  s += " ";
+  s += Utils::Format(this->ConvertTime(GetTimeInQ()));
+  s += ": ";
+  s += Utils::Format(which_station_, 4);
 
-return s;
+  return s;
 } // string OneVoter::toString()
 
 /****************************************************************
-* 
+ * Function 'ToStringHeader'
+ * This function returns a string formatted as a header for the voter's data dump.
 **/
 string OneVoter::ToStringHeader() {
-string s = kTag;
-s += "    Seq        Arr           Start             Dur             End            Wait         Stn";
-return s;
+  string s = kTag;
+  s += "    Seq        Arr           Start             Dur             End            Wait         Stn";
+  return s;
 }
 
