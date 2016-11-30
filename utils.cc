@@ -765,6 +765,16 @@ std::string Utils::TrimBlanks(std::string what) {
 } // std::string Utils::trimBlanks(std::string what)
 
 /****************************************************************
+ * Output
+ */
+void Utils::Output(std::string out_string, ofstream& offstream, ofstream& log_stream)
+{
+  offstream << out_string << endl;
+  log_stream << out_string << endl;
+}
+
+
+/****************************************************************
  * General function for trimming whitespace from begin and end.
  *
  * Parameters:
@@ -776,13 +786,7 @@ std::string Utils::Trim(std::string s) {
   size_t foundPos = std::string::npos;
   std::string return_string = s;
   
-/****************************************************************
-  * Output
-  */
-  void Utils::Output(std::string out_string, ofstream& offstream, ofstream& log_stream)
-  {
-    offstream << out_string << endl;
-  }
+
 
 #ifdef EBUG3
   Utils::log_stream << kTag << "orig string: '" << return_string << "'\n";
