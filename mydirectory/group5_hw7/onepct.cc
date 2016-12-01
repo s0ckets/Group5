@@ -1,6 +1,10 @@
 #include "onepct.h"
 /****************************************************************
- * Implementation for the 'OnePct' class.
+ * Implementation for the 'OnePct' class. This class is used as 
+ * the heart of the entire program. It sets up voting queues
+ * which run and calculate wait times and which voters are
+ * waiting, voting, or done voting. It also handles stations 
+ * within the precinct.
  *
  * Author/copyright:  Duncan Buell. All rights reserved.
  * Date: 21 May 2013
@@ -58,8 +62,11 @@ int OnePct::GetPctNumber() const {
 /******************************************************************************
  * Function 'ComputeMeanAndDev'
  *
- * 
+ * No Parameters.
  *
+ * Computes the mean and deviation, using OneVoter's functions to take average
+ * wait times and use it to find the mean and deviation for each precincts
+ * times.
  *
 **/
 void OnePct::ComputeMeanAndDev() {
@@ -103,6 +110,9 @@ void OnePct::ComputeMeanAndDev() {
  * ~ MyRandom instance (by reference)
  * ~ out_stream - output
  *
+ * Creates Voters and clears old voter rolls. Uses a few functions
+ * from a configuration instance to calculate conditions for these
+ * voters. Uses MyRandom to randomize and legitimize the process.
 **/
 void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
   ofstream& out_stream) {
@@ -162,6 +172,10 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
  * ~ int station_count
  * ~ map of type <int, int> (by reference)
  * ~ out_stream - output (by reference)
+ *
+ * 
+ *
+ *
  *
 **/
 int OnePct::DoStatistics(int iteration, const Configuration& config,
