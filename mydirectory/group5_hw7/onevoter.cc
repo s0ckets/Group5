@@ -158,10 +158,17 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
 
 /****************************************************************
  * Function 'ToString'
- * This string-formats the voter's data annd times retrieved through class functions
+ * This function returns a String of voter's data annd times, 
+ * retrieved through this->function calls for efficiency.
  *
- * Returns:
- *  -
+ * Returns: String s (contains):
+ *     - voter's sequence in precinct (of 2700)
+ *     - Time-formatted arrival time
+ *     - Time-formatted start voting time
+ *     - Time-formatted voting duration time
+ *     - Time-formatted end voting time
+ *     - Time-formatted total time in Queue
+ *     - Station Number
 **/
 string OneVoter::ToString() {
   string s = kTag;
@@ -186,8 +193,11 @@ string OneVoter::ToString() {
 
 /****************************************************************
  * Function 'ToStringHeader'
- * This function returns a string formatted as a header for the voter's 
- * data dump.
+ * This function returns a String formatted as a header for data in ToString()
+ * 
+ * Returns: String (represents)
+ *     - Sequence, Arrival time, Start Time, Vote Duration, End Time, Wait Time,
+ *       Station Number
 **/
 string OneVoter::ToStringHeader() {
   string s = kTag;
