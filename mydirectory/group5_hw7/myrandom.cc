@@ -20,6 +20,8 @@
  * This class contains functions that will generate a random integer based on 
  * a uniform or exponential distribution or a random double based on a uniform 
  * or normal distribution.
+ * In this particular program, only the random uniform integer and random 
+ * exponential integer are used.
 **/
 
 /******************************************************************************
@@ -77,6 +79,7 @@ int MyRandom::RandomExponentialInt(double lambda) {
  * This generates 'double' random numbers normally distributed with
  * mean 'mean' and standard deviation 'dev'. It also uses an assert for
  * initial parameter checking.
+ * This function is not used in this particular assignment.
  *
  * Parameters:
  *   mean - the mean of the normally distributed RNs
@@ -96,6 +99,7 @@ double MyRandom::RandomNormal(double mean, double dev) {
  * Function 'RandomUniformDouble'.
  * This generates 'double' random numbers uniformly distributed from
  * 'lower' to 'upper' inclusive. It also uses an assert for parameter checking.
+ * This function is not used in this particular assignment.
  *
  * Parameters:
  *   lower - the smallest value of the RNs

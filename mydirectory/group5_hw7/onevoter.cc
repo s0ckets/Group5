@@ -174,7 +174,8 @@ string OneVoter::ToString() {
   s += " ";
   s += Utils::Format(this->ConvertTime(time_vote_duration_seconds_));
   s += " ";
-  s += Utils::Format(this->GetTOD(time_start_voting_seconds_ + time_vote_duration_seconds_));
+  s += Utils::Format(this->GetTOD(time_start_voting_seconds_ 
+    + time_vote_duration_seconds_));
   s += " ";
   s += Utils::Format(this->ConvertTime(GetTimeInQ()));
   s += ": ";
@@ -185,7 +186,8 @@ string OneVoter::ToString() {
 
 /****************************************************************
  * Function 'ToStringHeader'
- * This function returns a string formatted as a header for the voter's data dump.
+ * This function returns a string formatted as a header for the voter's 
+ * data dump.
 **/
 string OneVoter::ToStringHeader() {
   string s = kTag;
