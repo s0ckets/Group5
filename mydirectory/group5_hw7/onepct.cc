@@ -353,22 +353,22 @@ void OnePct::RunSimulationPct(const Configuration& config,
         }
       }
 
-    for (int time = time_lower; time <= time_upper; ++time) {
+      for (int time = time_lower; time <= time_upper; ++time) {
  
-      int count = map_for_histo[time];
+        int count = map_for_histo[time];
 
-      double count_double = static_cast<double>(count) /
-      static_cast<double>(config.number_of_iterations_);
+        double count_double = static_cast<double>(count) /
+        static_cast<double>(config.number_of_iterations_);
 
-      int count_divided_ceiling = static_cast<int>(ceil(count_double
+        int count_divided_ceiling = static_cast<int>(ceil(count_double
                                                         / voters_per_star));
-      string stars = string(count_divided_ceiling, '*');
+        string stars = string(count_divided_ceiling, '*');
 
-      outstring = kTag + "HISTO " + Utils::Format(time, 6) + ": "
-      + Utils::Format(count_double, 7, 2) + ": ";
-      outstring += stars + "\n";
-      Utils::Output(outstring, out_stream, Utils::log_stream);
-    }
+        outstring = kTag + "HISTO " + Utils::Format(time, 6) + ": "
+        + Utils::Format(count_double, 7, 2) + ": ";
+        outstring += stars + "\n";
+        Utils::Output(outstring, out_stream, Utils::log_stream);
+      }
     outstring = "HISTO\n\n";
     Utils::Output(outstring, out_stream, Utils::log_stream);
     }
