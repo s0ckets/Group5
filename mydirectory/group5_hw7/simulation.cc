@@ -113,6 +113,7 @@ void Simulation::RunSimulation(const Configuration& config,
 *
 * Iterates through each OnePct in pcts_ and adds its ToString to
 * a return string which is returned at the end.
+* (Not currently called anywhere, but left for future usage)
 * 
 * Parameters - none
 * Returns : s
