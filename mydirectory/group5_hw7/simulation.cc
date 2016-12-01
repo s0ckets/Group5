@@ -13,6 +13,10 @@
  *
  * Date last modified: December 1 2016
  *
+ * The simulation class is used to set up the pcts_ vector and
+ * call RunSimulationPct for each OnePct after doing bounds
+ * checking. In short, it sets up the program and begins
+ * execution.
 **/
 
 static const string kTag = "SIM: ";
@@ -100,12 +104,7 @@ void Simulation::RunSimulation(const Configuration& config,
 
   outstring = kTag + "PRECINCT COUNT THIS BATCH "
   + Utils::Format(pct_count_this_batch, 4) + "\n";
-  //  Utils::Output(outstring, out_stream);
   Utils::Output(outstring, out_stream, Utils::log_stream);
-  //  out_stream << outstring << endl;
-  //  out_stream.flush();
-  //  Utils::log_stream << outstring << endl;
-  //  Utils::log_stream.flush();
 
 } // void Simulation::RunSimulation()
 
