@@ -100,7 +100,8 @@ void Simulation::RunSimulation(const Configuration& config,
     pct.RunSimulationPct(config, random, out_stream);
 
     //    break; // we only run one pct right now
-  } // for(auto iterPct = pcts_.begin(); iterPct != pcts_.end(); ++iterPct)
+  } // for(auto iterPct = pcts_.begin(); 
+              //iterPct != pcts_.end(); ++iterPct)
 
   outstring = kTag + "PRECINCT COUNT THIS BATCH "
   + Utils::Format(pct_count_this_batch, 4) + "\n";
