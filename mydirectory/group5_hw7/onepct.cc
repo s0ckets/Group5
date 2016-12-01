@@ -235,7 +235,7 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
   return toolongcount;
 }
 
-/****************************************************************
+/******************************************************************************
  * Function 'ReadData'
  *
  * Parameters:
@@ -446,7 +446,8 @@ void OnePct::RunSimulationPct2(int stations_count) {
       else { // if (second == iter->first) {
         break; // we have walked in time past current time to arrivals in the future
       }
-    } // for (auto iter = voters_pending_.begin(); iter != voters_pending_.end(); ++iter) {
+    } // for (auto iter = voters_pending_.begin(); 
+                //iter != voters_pending_.end(); ++iter) {
 
     for (auto iter = voters_pending_to_erase_by_iterator.begin();
          iter != voters_pending_to_erase_by_iterator.end(); 
