@@ -173,9 +173,10 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
  * ~ map of type <int, int> (by reference)
  * ~ out_stream - output (by reference)
  *
- * 
- *
- *
+ * No trickery here, the function computes a few different statistics from
+ * the data provided. Wait time is calculated, along with a 10 and 20 
+ * different a string with all the data is created and loaded with 
+ * all of the information and calculations.
  *
 **/
 int OnePct::DoStatistics(int iteration, const Configuration& config,
@@ -255,6 +256,9 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
  * Parameters:
  * ~ infile - input
  *
+ * Reads all precinct data, from the input file, and then sets it into the 
+ * many different varibles. Practicly, this function sets up the backbone of
+ * each precinct.
  *
 **/
 void OnePct::ReadData(Scanner& infile) {
@@ -286,6 +290,9 @@ void OnePct::ReadData(Scanner& infile) {
  * ~ Configuration instance (by reference)
  * ~ MyRandom instance (by reference)
  * ~ out_stream - output
+ *
+ * Runs the majority of the voter managment, along with station managment. The
+ * backbone of the class, this function runs everything.
  *
 **/
 void OnePct::RunSimulationPct(const Configuration& config,
@@ -395,6 +402,8 @@ void OnePct::RunSimulationPct(const Configuration& config,
  * Parameters:
  * ~ int stations_count - number of stations
  *
+ * Manages the station and waiting times for the simulation, loads and unloads
+ * the voters at each precinct and station.
  *
 **/
 void OnePct::RunSimulationPct2(int stations_count) {
@@ -483,8 +492,10 @@ void OnePct::RunSimulationPct2(int stations_count) {
 /****************************************************************
  * Function 'ToString'
  *
+ * No parameters.
  *
- *
+ * A simple ToString() function. Creates a string and populates
+ * it with important information from each precinct.
  *
 **/
 string OnePct::ToString() {
@@ -519,6 +530,9 @@ string OnePct::ToString() {
  * ~ string label
  * ~ themap - multimap of type <int, OneVoter> 
  *
+ * Creates a string that appends information about a supplied 
+ * voter map, and then iterates through each voter map
+ * printing the data on each OneVoter instance.
  *
 **/
 string OnePct::ToStringVoterMap(string label,
