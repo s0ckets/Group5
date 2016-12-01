@@ -11,6 +11,13 @@
  *
  * Date last modified: December 1 2016
  *
+ * The OnePct class is used as the heart of the entire program.
+ * It sets up voting queues and precinct data that are used to
+ * run and calculate wait times and even which voters are
+ * waiting, voting, or done voting. It also handles open and
+ * busy stations within the precincts.
+ * 
+ *
 **/
 
 
@@ -62,6 +69,7 @@ public:
   string ToStringVoterMap(string label, multimap<int, OneVoter> themap);
 
 private:
+  //Precinct Characteristics
   int    pct_expected_voters_ = kDummyInt;
   int    pct_expected_per_hour_ = kDummyInt;
   double pct_minority_ = kDummyDouble;
@@ -70,10 +78,13 @@ private:
   double pct_turnout_ = kDummyDouble;
   int    pct_stations_ = kDummyInt;
   int    pct_num_voters_ = kDummyInt;
+  //Wait times calculations
   double wait_dev_seconds_;
   double wait_mean_seconds_;
+  //station groups
   set<int> stations_to_histo_;
   vector<int> free_stations_;
+  //Groups of voters, throughout the process
   multimap<int, OneVoter> voters_backup_;
   multimap<int, OneVoter> voters_done_voting_;
   multimap<int, OneVoter> voters_pending_;
