@@ -1,7 +1,10 @@
 #include "onevoter.h"
 /****************************************************************
  * Implementation for the 'OneVoter' class.
- *
+ * This class represents a single voter from a certain precinct. The constructor
+ * is used to get: the arrival time inseconds, the voter's sequence out of 2700, and a
+ * randomized duration seconds used to decide how long that voter takes to vote. 
+ * 
  * Author/copyright:  Duncan Buell. All rights reserved.
  * Date: 6 October 2016
  * Used and Modified by: Adrian Brooks
