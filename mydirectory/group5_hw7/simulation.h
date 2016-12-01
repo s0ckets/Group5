@@ -44,7 +44,6 @@ public:
   void RunSimulation(const Configuration& config,
                      MyRandom& random, ofstream& out_stream);
   string ToString();
-  string ToStringPcts();
 
 private:
 /****************************************************************
