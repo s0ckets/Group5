@@ -1,5 +1,5 @@
 #include "configuration.h"
-/****************************************************************
+/*******************************************************************************
  * Implementation for the 'Configuration' class.
  *
  * Author/copyright:  Duncan Buell. All rights reserved.
@@ -13,35 +13,60 @@
  *
  * Date last modified: December 1 2016
  *
+ * This class contains three important functions: an accessor, a ToString, and 
+ * a ReadConfiguration. The accessor returns the last index of the vector 
+ * actual_service_times_ and is used internally. The ToString returns a string 
+ * represenation of the data contained in this class. Finaly, the 
+ * ReadConfiguration takes in a Scanner and uses it to populate the public 
+ * variables defined in the header file for a certain instance of configuration.
 **/
 
 static const string kTag = "CONFIG: ";
 
-/****************************************************************
+/*******************************************************************************
  * Constructor.
 **/
 Configuration::Configuration() {
 }
 
-/****************************************************************
+/*******************************************************************************
  * Destructor.
 **/
 Configuration::~Configuration() {
 }
 
-/****************************************************************
+/*******************************************************************************
  * Accessors and mutators.
 **/
-/****************************************************************
+/*******************************************************************************
+ * Function 'GetMaxServiceSubscript'.
+ * This function returns an integer corresponding to the maximum service 
+ * subscript.
+ *
+ * Parameters:
+ *   None
+ *
+ * Returns:
+ *   the last index of the vector 'actual_service_times_'
 **/
 int Configuration::GetMaxServiceSubscript() const {
   return static_cast<int>(actual_service_times_.size()) - 1;
 }
 
-/****************************************************************
+/*******************************************************************************
  * General functions.
 **/
-/****************************************************************
+/******************************************************************************* * Function 'ReadConfiguration'.
+ * This function reads two lines from the instream Scanner and populates each
+ * public variable declared in the header file with this data except for the 
+ * vector 'actual_service_times_', which is populated with data from the file 
+ * "dataallsorted.txt". 
+ *
+ * Parameters:
+ *   instream - a pointer to the scanner from which we are reading the data
+ * 
+ * Returns:
+ *   None
 **/
 void Configuration::ReadConfiguration(Scanner& instream) {
   string line;
@@ -74,7 +99,18 @@ void Configuration::ReadConfiguration(Scanner& instream) {
   }
 }
 
-/****************************************************************
+/*******************************************************************************
+ * Function 'ToString'.
+ * This function creates a string that contains all of the labeled data within
+ * the configuration class with the exception of the 'actual_service_times_' 
+ * vector. This function also makes liberal use of the 'Utils::Format' function
+ * in order to make the data easily readable.
+ * 
+ * Parameters:
+ *   None
+ *
+ * Returns:
+ *   s - a string representation of the configuration
 **/
 string Configuration::ToString()
 {

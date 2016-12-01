@@ -17,6 +17,9 @@
  *
  * Date last modified: December 1 2016
  *
+ * This class contains functions that will generate a random integer based on 
+ * a uniform or exponential distribution or a random double based on a uniform 
+ * or normal distribution.
 **/
 
 /******************************************************************************
@@ -52,7 +55,7 @@ MyRandom::~MyRandom() {
 /******************************************************************************
  * Function 'RandomExponentialInt'.
  * This generates 'double' random numbers exponentially distributed with
- * parameter 'lambda'.
+ * parameter 'lambda'. It uses an assert statement for parameter checking.
  *
  * PDF is lambda * exp(-lambda * t)
  *
@@ -72,7 +75,8 @@ int MyRandom::RandomExponentialInt(double lambda) {
 /******************************************************************************
  * Function 'RandomNormal'.
  * This generates 'double' random numbers normally distributed with
- * mean 'mean' and standard deviation 'dev'.
+ * mean 'mean' and standard deviation 'dev'. It also uses an assert for
+ * initial parameter checking.
  *
  * Parameters:
  *   mean - the mean of the normally distributed RNs
@@ -91,7 +95,7 @@ double MyRandom::RandomNormal(double mean, double dev) {
 /******************************************************************************
  * Function 'RandomUniformDouble'.
  * This generates 'double' random numbers uniformly distributed from
- * 'lower' to 'upper' inclusive.
+ * 'lower' to 'upper' inclusive. It also uses an assert for parameter checking.
  *
  * Parameters:
  *   lower - the smallest value of the RNs
@@ -110,7 +114,7 @@ double MyRandom::RandomUniformDouble(double lower, double upper) {
 /******************************************************************************
  * Function 'RandomUniformInt'.
  * This generates 'int' random numbers uniformly distributed from
- * 'lower' to 'upper' inclusive.
+ * 'lower' to 'upper' inclusive. It also uses an assert for parameter checking.
  *
  * Parameters:
  *   lower - the smallest value of the RNs
