@@ -371,9 +371,9 @@ void OnePct::RunSimulationPct(const Configuration& config,
     }
     outstring = "HISTO\n\n";
     Utils::Output(outstring, out_stream, Utils::log_stream);
+    }
   }
 }
-
 /******************************************************************************
  *
  * Function 'RunSimulationPct2'
