@@ -64,8 +64,10 @@ public:
  static void FileClose(std::ofstream& out_stream);
  static bool FileDoesExist(const std::string filename);
  static bool FileDoesNotExist(const std::string filename);
- static void FileOpen(std::ifstream& in_stream, const std::string filename);
- static void FileOpen(std::ofstream& out_stream, const std::string filename);
+ static void FileOpen(std::ifstream& in_stream, 
+                      const std::string filename);
+ static void FileOpen(std::ofstream& out_stream, 
+                      const std::string filename);
  static void InFileOpen(const std::string filename);
 //  static void OutFileOpen(const string fileName);
  static void LogFileOpen(const std::string filename);
@@ -79,8 +81,10 @@ public:
                            const std::string justify);
 
  static std::string Format(const std::string value);
- static std::string Format(const std::string value, const int width);
- static std::string Format(const std::string value, const int width,
+ static std::string Format(const std::string value, 
+                           const int width);
+ static std::string Format(const std::string value, 
+                           const int width,
                            const std::string justify);
 
  static std::string Format(const short value);
@@ -109,11 +113,13 @@ public:
 
  static std::string ReplaceBlanks(std::string input, char c);
  static std::string TimeCall(const std::string timestring);
- static std::string TimeCall(const std::string timestring, double& timenew);
+ static std::string TimeCall(const std::string timestring, 
+                             double& timenew);
  static void ToLower(std::string& to, const std::string from);
  static std::string TrimBlanks(std::string what);
  static std::string Trim(std::string what);
- static void Output(std::string, std::ofstream& offstream, std::ofstream& log_stream);
+ static void Output(std::string, std::ofstream& out_stream, 
+                    std::ofstream& log_stream);
 
 private:
 };

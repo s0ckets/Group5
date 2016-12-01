@@ -1,5 +1,24 @@
 #include "utils.h"
-
+/****************************************************************
+ * Implementation for the 'Utils' class.
+ * 
+ * Author/copyright: Duncan Buell. All rights reserved.
+ * Date: 8 May 2016
+ * 
+ * Used and Modified by: Adrian Brooks
+ *                       Russell Burckhalter
+ *                       Donald Landrum Jr
+ *                       Matthew McGee
+ *                       Marc Oschner
+ *
+ * Date last modified: December 1 2016
+ * 
+ * This class provides various utilities and it accessed 
+ * throughout the program. One such utility, the Output function,
+ * was written by our group at the very bottom of this file. It 
+ * takes in a string and two ofstreams as parameters and simply
+ * outputs that string to both of those ofstreams.
+**/
 static const std::string kTag = "UTILS: ";
 static const std::string WHITESPACE = " \n\t\r";
 
@@ -36,7 +55,8 @@ void Utils::CheckArgs(const int howMany, const int argc,
   if(argc != howMany + 1)
   {
 //    std::cout << kTag << "incorrect argument count\n";
-    std::cout << kTag << "usage: " << argv[0] << " " << usage << std::endl;
+    std::cout << kTag << "usage: " << argv[0] << " " << usage 
+              << std::endl;
     exit(1);
   }
 }
@@ -79,17 +99,20 @@ bool Utils::FileDoesExist(std::string filename) {
   bool return_value = false; // default is that the file does not exist
   std::ifstream in_stream;
 
-  std::cout << kTag << "test existence of input file '" << filename << "'\n";
+  std::cout << kTag << "test existence of input file '" 
+            << filename << "'\n";
   in_stream.open(filename.c_str());
   if(in_stream.fail())
   {
-    std::cout << kTag << "open failed for '" << filename << "'\n";
+    std::cout << kTag << "open failed for '" 
+              << filename << "'\n";
     return_value = false;
     in_stream.close();
   }
   else
   {
-    std::cout << kTag << "open succeeded for '" << filename << "'\n";
+    std::cout << kTag << "open succeeded for '" 
+              << filename << "'\n";
     return_value = true;
     in_stream.close();
   }
@@ -109,17 +132,20 @@ bool Utils::FileDoesNotExist(std::string filename) {
   bool return_value = true; // default is that the file does not exist
   std::ifstream in_stream;
 
-  std::cout << kTag << "test nonexistence of input file '" << filename << "'\n";
+  std::cout << kTag << "test nonexistence of input file '" 
+            << filename << "'\n";
   in_stream.open(filename.c_str());
   if(in_stream.fail())
   {
-    std::cout << kTag << "file '" << filename << "' does not exist\n";
+    std::cout << kTag << "file '" << filename 
+              << "' does not exist\n";
     return_value = true;
     in_stream.close();
   }
   else
   {
-    std::cout << kTag << "file '" << filename << "' does indeed exist\n";
+    std::cout << kTag << "file '" << filename 
+              << "' does indeed exist\n";
     return_value = false;
     in_stream.close();
   }
@@ -135,15 +161,19 @@ bool Utils::FileDoesNotExist(std::string filename) {
  *   filename - the name of the file to be opened
  * Return: none
 **/
-void Utils::FileOpen(std::ifstream& in_stream, std::string filename) {
-  std::cout << kTag << "open the input file '" << filename << "'\n";
+void Utils::FileOpen(std::ifstream& in_stream, 
+                     std::string filename) {
+  std::cout << kTag << "open the input file '" 
+            << filename << "'\n";
   in_stream.open(filename.c_str());
   if(in_stream.fail())
   {
-    std::cout << kTag << "open failed for '" << filename << "'\n";
+    std::cout << kTag << "open failed for '" 
+              << filename << "'\n";
     exit(0);
   }
-  std::cout << kTag << "open succeeded for '" << filename << "'\n";
+  std::cout << kTag << "open succeeded for '" 
+            << filename << "'\n";
 }
 
 /****************************************************************
@@ -154,15 +184,19 @@ void Utils::FileOpen(std::ifstream& in_stream, std::string filename) {
  *   filename - the name of the file to be opened
  * Return: none
 **/
-void Utils::FileOpen(std::ofstream& out_stream, std::string filename) {
-  std::cout << kTag << "open the output file '" << filename << "'\n";
+void Utils::FileOpen(std::ofstream& out_stream, 
+                     std::string filename) {
+  std::cout << kTag << "open the output file '" 
+            << filename << "'\n";
   out_stream.open(filename.c_str());
   if(out_stream.fail())
   {
-    std::cout << kTag << "open failed for '" << filename << "'\n";
+    std::cout << kTag << "open failed for '" 
+              << filename << "'\n";
     exit(0);
   }
-  std::cout << kTag << "open succeeded for '" << filename << "'\n";
+  std::cout << kTag << "open succeeded for '" 
+            << filename << "'\n";
 }
 
 /****************************************************************
@@ -178,10 +212,12 @@ void Utils::LogFileOpen(std::string filename) {
   log_stream.open(filename.c_str());
   if(log_stream.fail())
   {
-    std::cout << kTag << "open failed for '" << filename << "'\n";
+    std::cout << kTag << "open failed for '" 
+              << filename << "'\n";
     exit(0);
   }
-  std::cout << kTag << "open succeeded for '" << filename << "'\n";
+  std::cout << kTag << "open succeeded for '" 
+            << filename << "'\n";
 }
 
 /****************************************************************
@@ -191,11 +227,13 @@ void Utils::LogFileOpen(std::string filename) {
  * We have the following formatting:
  *   'char*' to a 'string' 
  *   'char*' to a 'string' of 'width' (default right) 
- *   'char*' to a 'string' of 'width' (left or right, default right) 
+ *   'char*' to a 'string' of 'width' (left or right, 
+ *                                     default right) 
  *
  *   'string' to a 'string' 
  *   'string' to a 'string' of 'width' (default right) 
- *   'string' to a 'string' of 'width' (left or right, default right) 
+ *   'string' to a 'string' of 'width' (left or right, 
+ *                                      default right) 
  *
  *   'short'     to a 'string'
  *   'short'     to a 'string' of 'width'
@@ -291,7 +329,8 @@ std::string Utils::Format(const std::string value) {
  *   width - the width of the output field.
  * Return: the string-ified version of 'value'
 **/
-std::string Utils::Format(const std::string value, const int width) {
+std::string Utils::Format(const std::string value, 
+                          const int width) {
   Utils::oss.str("");
   Utils::oss << std::setw(width) << value;
   return oss.str();
@@ -307,7 +346,8 @@ std::string Utils::Format(const std::string value, const int width) {
  *   justify - desired justification, either 'right' or 'left'
  * Return: the string-ified version of 'value'
 **/
-std::string Utils::Format(const std::string value, const int width,
+std::string Utils::Format(const std::string value, 
+                          const int width,
                           const std::string justify) {
   Utils::oss.str("");
   if("left" == justify)
@@ -499,17 +539,18 @@ std::string Utils::Format(const double value, const int width) {
 std::string Utils::Format(const double value, const int width,
                           const int precision) {
   Utils::oss.str("");
-  Utils::oss << std::fixed << std::setprecision(precision) << std::setw(width)
-             << value;
+  Utils::oss << std::fixed << std::setprecision(precision) 
+             << std::setw(width) << value;
 
-  std::string returnString = Utils::Format(oss.str(), width, "right");
+  std::string returnString = Utils::Format(oss.str(), 
+                                           width, "right");
   return returnString;
 }
 
 /****************************************************************
  * Replace blanks with another character.
- * This is to allow using an underscore to make a string one string
- * instead of having embedded blanks. 
+ * This is to allow using an underscore to make a string one 
+ * string instead of having embedded blanks. 
  *
  * Parameters:
  *   what - the input 'string' to trim blanks from
@@ -557,7 +598,8 @@ int Utils::StringToInteger(std::string input) {
 //  Utils::log_stream << kTag << "now pos '" << input << "'\n";
 //  Utils::log_stream.flush();
 
-  for(std::string::iterator iter = input.begin(); iter != input.end(); ++iter)
+  for(std::string::iterator iter = input.begin(); 
+      iter != input.end(); ++iter)
   {
     int digit = digits.find(*iter);
     if((0 > digit) || (9 < digit))
@@ -587,7 +629,8 @@ LONG Utils::StringToLONG(std::string input) {
   LONG return_value = 0L;
   const std::string digits = "0123456789";
 
-  for(std::string::iterator iter = input.begin(); iter != input.end(); ++iter)
+  for(std::string::iterator iter = input.begin(); 
+      iter != input.end(); ++iter)
   {
     int digit = digits.find(*iter);
     if((0 > digit) || (9 < digit))
@@ -622,7 +665,8 @@ std::string Utils::TimeCall(const std::string time_string) {
  *   timestring - the label to be put into the time log
  * Returns: the 'string' version of the timing log
 **/
-std::string Utils::TimeCall(const std::string timestring, double& timeNew) {
+std::string Utils::TimeCall(const std::string timestring, 
+                            double& timeNew) {
   char s[160];
   std::string return_value;
   static bool firsttime = true;
@@ -689,11 +733,12 @@ std::string Utils::TimeCall(const std::string timestring, double& timeNew) {
   return_value += std::string(s);
 
   snprintf(s,80,"TIME %-15s %10.2f u   %10.2f s   Res:%12ld\n",
-                 timestring.c_str(),usercurrent,systemcurrent, rusage.ru_maxrss);
+                 timestring.c_str(),usercurrent,systemcurrent, 
+                 rusage.ru_maxrss);
   return_value += std::string(s);
 
   snprintf(s,80,"TIME %-15s %10.2f u_t %10.2f s_t\n",
-                 timestring.c_str(),TIMEusertotal,TIMEsystemtotal);
+           timestring.c_str(),TIMEusertotal,TIMEsystemtotal);
   return_value += std::string(s);
 
   snprintf(s,80,"TIME***********************************************************************\n");
@@ -766,10 +811,19 @@ std::string Utils::TrimBlanks(std::string what) {
 
 /****************************************************************
  * Output
+ * General function for outputting a given string to two given
+ * ofstreams.
+ *
+ * Parameters: 
+ *   out_string - the string to be outputted
+ *   out_stream - the target destination for the string
+ *   log_stream - the log file
  */
-void Utils::Output(std::string out_string, std::ofstream& offstream, std::ofstream& log_stream)
+void Utils::Output(std::string out_string, 
+                   std::ofstream& out_stream, 
+                   std::ofstream& log_stream)
 {
-  offstream << out_string << "\n";
+  out_stream << out_string << "\n";
   log_stream << out_string << "\n";
 }
 
@@ -789,13 +843,15 @@ std::string Utils::Trim(std::string s) {
 
 
 #ifdef EBUG3
-  Utils::log_stream << kTag << "orig string: '" << return_string << "'\n";
+  Utils::log_stream << kTag << "orig string: '" 
+                    << return_string << "'\n";
   Utils::log_stream.flush();
 #endif
 
   foundPos = return_string.find_first_not_of(WHITESPACE);
 #ifdef EBUG3
-  Utils::log_stream << kTag << "found first: " << foundPos << std::endl;
+  Utils::log_stream << kTag << "found first: " 
+                    << foundPos << std::endl;
   Utils::log_stream.flush();
 #endif
   if(foundPos != std::string::npos)
@@ -803,13 +859,15 @@ std::string Utils::Trim(std::string s) {
     return_string = s.substr(foundPos);
   }
 #ifdef EBUG3
-  Utils::log_stream << kTag << "new string:  '" << return_string << "'\n";
+  Utils::log_stream << kTag << "new string:  '" 
+                    << return_string << "'\n";
   Utils::log_stream.flush();
 #endif
 
   foundPos = return_string.find_last_not_of(WHITESPACE);
 #ifdef EBUG3
-  Utils::log_stream << kTag << "found last:  " << foundPos << std::endl;
+  Utils::log_stream << kTag << "found last:  " 
+                    << foundPos << std::endl;
   Utils::log_stream.flush();
 #endif
   if(foundPos != std::string::npos)
@@ -817,7 +875,8 @@ std::string Utils::Trim(std::string s) {
     return_string = return_string.substr(0,foundPos+1);
   }
 #ifdef EBUG3
-  Utils::log_stream << kTag << "new string:  '" << return_string << "'\n";
+  Utils::log_stream << kTag << "new string:  '" 
+                    << return_string << "'\n";
   Utils::log_stream.flush();
 #endif
 
