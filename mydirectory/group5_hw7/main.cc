@@ -24,8 +24,7 @@
 
 static const string kTag = "MAIN: ";
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   string config_filename;
   string pct_filename = "XX";
   string log_filename = "XX";

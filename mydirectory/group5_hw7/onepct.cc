@@ -78,7 +78,7 @@ void OnePct::ComputeMeanAndDev() {
   
   for (iter_multimap = voters_done_voting_.begin();
        iter_multimap != voters_done_voting_.end(); ++iter_multimap) {
-		   
+
     OneVoter voter = iter_multimap->second;
     sum_of_wait_times_seconds += voter.GetTimeWaiting();
   }
@@ -91,7 +91,7 @@ void OnePct::ComputeMeanAndDev() {
   for (iter_multimap = voters_done_voting_.begin();
        iter_multimap != voters_done_voting_.end(); ++iter_multimap) {
     
-	OneVoter voter = iter_multimap->second;
+    OneVoter voter = iter_multimap->second;
     double this_addin = static_cast<double>(voter.GetTimeWaiting())
                                             - wait_mean_seconds_;
 
@@ -141,12 +141,12 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
   for (int hour = 0; hour < config.election_day_length_hours_; ++hour) {
     percent = config.arrival_fractions_.at(hour);
     int voters_this_hour = round((percent / 100.0) * pct_expected_voters_);
-    if (0 == hour%2){
+    if (0 == hour%2) {
      
       ++voters_this_hour;
     }
     int arrival = hour*3600;
-    for(int voter = 0; voter < voters_this_hour; ++voter) {
+    for (int voter = 0; voter < voters_this_hour; ++voter) {
     
       double lambda = static_cast<double>(voters_this_hour / 3600.0);
       int interarrival = random.RandomExponentialInt(lambda);
@@ -192,7 +192,7 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
        iter_multimap != this->voters_done_voting_.end(); ++iter_multimap) {
     
     OneVoter voter = iter_multimap->second;
-    int wait_time_minutes = voter.GetTimeWaiting() / 60; // secs to mins
+    int wait_time_minutes = voter.GetTimeWaiting() / 60;  // secs to mins
 
     ++(wait_time_minutes_map[wait_time_minutes]);
     ++(map_for_histo[wait_time_minutes]);
@@ -207,17 +207,17 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
 
     int waittime = iter->first;
     int waitcount = iter->second;
-    if (waittime > config.wait_time_minutes_that_is_too_long_){
+    if (waittime > config.wait_time_minutes_that_is_too_long_) {
 
       toolongcount += waitcount;
     }
 
-    if (waittime > config.wait_time_minutes_that_is_too_long_+10){
+    if (waittime > config.wait_time_minutes_that_is_too_long_+10) {
     
       toolongcountplus10 += waitcount;
     }
 
-    if (waittime > config.wait_time_minutes_that_is_too_long_+20){
+    if (waittime > config.wait_time_minutes_that_is_too_long_+20) {
 
       toolongcountplus20 += waitcount;
     }
@@ -236,11 +236,14 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
   + Utils::Format(wait_dev_seconds_/60.0, 8, 2)
   + " toolong "
   + Utils::Format(toolongcount, 6) + " "
-  + Utils::Format(100.0*toolongcount/(double)pct_expected_voters_, 6, 2)
+  + Utils::Format(100.0*toolongcount/
+                  static_cast<double>(pct_expected_voters_), 6, 2)
   + Utils::Format(toolongcountplus10, 6) + " "
-  + Utils::Format(100.0*toolongcountplus10/(double)pct_expected_voters_, 6, 2)
+  + Utils::Format(100.0*toolongcountplus10/
+                  static_cast<double>(pct_expected_voters_), 6, 2)
   + Utils::Format(toolongcountplus20, 6) + " "
-  + Utils::Format(100.0*toolongcountplus20/(double)pct_expected_voters_, 6, 2)
+  + Utils::Format(100.0*toolongcountplus20/
+                  static_cast<double>(pct_expected_voters_), 6, 2)
   + "\n";
 
   Utils::Output(outstring, out_stream, Utils::log_stream);
@@ -306,7 +309,7 @@ void OnePct::RunSimulationPct(const Configuration& config,
   min_station_count = min_station_count 
                     / (config.election_day_length_hours_*3600);
 
-  if (min_station_count <= 0){
+  if (min_station_count <= 0) {
 
     min_station_count = 1;
   }
@@ -318,7 +321,7 @@ void OnePct::RunSimulationPct(const Configuration& config,
        stations_count <= max_station_count; 
        ++stations_count) {
 
-    if (done_with_this_count){
+    if (done_with_this_count) {
 
       break;
     }
@@ -368,14 +371,14 @@ void OnePct::RunSimulationPct(const Configuration& config,
       if (map_for_histo[time_lower] > 50) {
         voters_per_star = map_for_histo[time_lower]
                       / (50 * config.number_of_iterations_);
-        if (voters_per_star <= 0){
+        if (voters_per_star <= 0) {
      
           voters_per_star = 1;
         }
       }
 
       for (int time = time_lower; time <= time_upper; ++time) {
- 
+
         int count = map_for_histo[time];
 
         double count_double = static_cast<double>(count) /
@@ -467,7 +470,7 @@ void OnePct::RunSimulationPct2(int stations_count) {
         } // if (free_stations_.size() > 0) {
       } 
       else { // if (second == iter->first) {
-        break; // we have walked in time past current time to arrivals in the future
+        break; // we walked in time past current time to arrivals in the future
       }
     } // for (auto iter = voters_pending_.begin(); 
                 //iter != voters_pending_.end(); ++iter) {
@@ -541,8 +544,8 @@ string OnePct::ToStringVoterMap(string label,
 
   string s = "";
 
-  s += "\n" + label + " WITH " + Utils::Format((int)themap.size(), 6)
-    + " ENTRIES\n";
+  s += "\n" + label + " WITH " 
+    + Utils::Format(static_cast<int>(themap.size()), 6) + " ENTRIES\n";
   s += OneVoter::ToStringHeader() + "\n";
   for (auto iter = themap.begin(); iter != themap.end(); ++iter) {
     

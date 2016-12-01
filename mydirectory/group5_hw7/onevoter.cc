@@ -136,23 +136,23 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
 
   s += Utils::Format(time_in_seconds, 6);
 
-  if(hours < 0)
+  if (hours < 0)
     s += " 00";
-  else if(hours < 10)
+  else if (hours < 10)
     s += " 0" + Utils::Format(hours, 1);
   else
     s += " " + Utils::Format(hours, 2);
 
-  if(minutes < 0)
+  if (minutes < 0)
     s += ":00";
-  else if(minutes < 10)
+  else if (minutes < 10)
     s += ":0" + Utils::Format(minutes, 1);
   else
     s += ":" + Utils::Format(minutes, 2);
 
-  if(seconds < 0)
+  if (seconds < 0)
     s += ":00";
-  else if(seconds < 10)
+  else if (seconds < 10)
     s += ":0" + Utils::Format(seconds, 1);
   else
     s += ":" + Utils::Format(seconds, 2);
@@ -205,7 +205,8 @@ string OneVoter::ToString() {
 **/
 string OneVoter::ToStringHeader() {
   string s = kTag;
-  s += "    Seq        Arr           Start             Dur             End            Wait         Stn";
+  s += "    Seq        Arr           Start             Dur";
+  s += "             End            Wait         Stn";
   return s;
 }
 

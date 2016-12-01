@@ -112,8 +112,7 @@ void Configuration::ReadConfiguration(Scanner& instream) {
  * Returns:
  *   s - a string representation of the configuration
 **/
-string Configuration::ToString()
-{
+string Configuration::ToString() {
   string s = "\n";
   s += kTag;
   s += "RN seed:              ";

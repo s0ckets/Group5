@@ -24,13 +24,13 @@ static const string kTag = "SIM: ";
 /****************************************************************
 * Constructor.
 **/
-Simulation::Simulation(){
+Simulation::Simulation() {
 }
 
 /****************************************************************
 * Destructor.
 **/
-Simulation::~Simulation(){
+Simulation::~Simulation() {
 }
 
 /****************************************************************
@@ -78,16 +78,16 @@ void Simulation::ReadPrecincts(Scanner& infile) {
 * Returns: nothing
 **/
 void Simulation::RunSimulation(const Configuration& config,
-                   MyRandom& random, ofstream& out_stream){
+                   MyRandom& random, ofstream& out_stream) {
   string outstring = "XX";
   int pct_count_this_batch = 0;
-  for(auto iterPct = pcts_.begin(); iterPct != pcts_.end();
-      ++iterPct){
+  for (auto iterPct = pcts_.begin(); iterPct != pcts_.end();
+      ++iterPct) {
 
     OnePct pct = iterPct->second;
     int expected_voters = pct.GetExpectedVoters();
     if ((expected_voters <= config.min_expected_to_simulate_) ||
-        (expected_voters > config.max_expected_to_simulate_)){
+        (expected_voters > config.max_expected_to_simulate_)) {
     
       continue;
     }
@@ -119,12 +119,12 @@ void Simulation::RunSimulation(const Configuration& config,
 * Parameters - none
 * Returns : s
 **/
-string Simulation::ToString(){
+string Simulation::ToString() {
 
   string s = "";
 
-  for(auto iterPct = pcts_.begin(); iterPct != pcts_.end(); 
-         ++iterPct){
+  for (auto iterPct = pcts_.begin(); iterPct != pcts_.end(); 
+         ++iterPct) {
 
     s += kTag + (iterPct->second).ToString() + "\n";
   }
